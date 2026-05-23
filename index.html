@@ -5,67 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SMKN 4 Buton Utara</title>
     <style>
-        /* --- RESET & BASIC STYLES --- */
+        /* Reset & Base Styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        
         body {
             line-height: 1.6;
             color: #333;
             background-color: #f4f6f9;
         }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
 
-        /* --- NAVBAR --- */
+        /* Header & Navigation */
         header {
             background-color: #1e3a8a;
             color: #fff;
+            padding: 1rem 2rem;
             position: sticky;
             top: 0;
             z-index: 1000;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
-
-        .navbar {
+        nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 1rem 2rem;
         }
-
         .logo h1 {
             font-size: 1.5rem;
             font-weight: bold;
             letter-spacing: 1px;
         }
-
         .nav-links {
             display: flex;
             list-style: none;
         }
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        .nav-links a:hover {
+            color: #60a5fa;
+            transition: 0.3s;
+        }
 
-        .nav-links li a {
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(30, 58, 138, 0.8), rgba(30, 58, 138, 0.8)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3') no-repeat center center/cover;
             color: #fff;
-            text-decoration: none;
-            padding: 0.5rem 1rem;
-            transition: all 0.3s ease;
-        }
-
-        .nav-links li a:hover {
-            background-color: #3b82f6;
-            border-radius: 4px;
-        }
-
-        /* --- HERO SECTION --- */
-        #hero {
-            background: linear-gradient(rgba(30, 58, 138, 0.7), rgba(30, 58, 138, 0.8)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3') no-repeat center center/cover;
             height: 60vh;
-            color: #fff;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -73,193 +68,161 @@
             text-align: center;
             padding: 0 1rem;
         }
-
-        #hero h2 {
+        .hero h2 {
             font-size: 2.5rem;
             margin-bottom: 1rem;
-            text-transform: uppercase;
         }
-
-        #hero p {
+        .hero p {
             font-size: 1.2rem;
             max-width: 600px;
-            margin-bottom: 2rem;
         }
 
-        .btn {
-            background-color: #f59e0b;
-            color: #fff;
-            padding: 0.75rem 1.5rem;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background 0.3s;
-        }
-
-        .btn:hover {
-            background-color: #d97706;
-        }
-
-        /* --- SECTION GENERAL --- */
-        section {
-            padding: 5rem 2rem;
+        /* Container */
+        .container {
             max-width: 1200px;
             margin: 0 auto;
+            padding: 4rem 2rem;
         }
 
-        .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
-            position: relative;
-            font-size: 2rem;
+        /* Sambutan Kepsek */
+        .kepsek-section {
+            display: flex;
+            align-items: center;
+            background: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-bottom: 4rem;
+        }
+        .kepsek-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-color: #cbd5e1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #475569;
+            margin-right: 2rem;
+            flex-shrink: 0;
+            border: 4px solid #1e3a8a;
+        }
+        .kepsek-text h3 {
             color: #1e3a8a;
+            margin-bottom: 0.5rem;
+        }
+        .kepsek-text .jabatan {
+            font-style: italic;
+            color: #64748b;
+            margin-bottom: 1rem;
         }
 
-        .section-title::after {
-            content: '';
-            width: 50px;
-            height: 4px;
-            background-color: #f59e0b;
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        /* --- TENTANG / PROFIL --- */
-        .about-container {
+        /* Visi Misi */
+        .visimisi-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 2rem;
-            align-items: center;
+            margin-bottom: 4rem;
         }
-
-        .about-text h3 {
-            margin-bottom: 1rem;
-            color: #1e3a8a;
-        }
-
-        .vision-mission {
-            background-color: #fff;
+        .box {
+            background: #fff;
             padding: 2rem;
-            border-left: 5px solid #3b82f6;
+            border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.05);
         }
+        .box h3 {
+            color: #1e3a8a;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #1e3a8a;
+            padding-bottom: 0.5rem;
+        }
+        .box ol {
+            padding-left: 1.2rem;
+        }
+        .box li {
+            margin-bottom: 0.5rem;
+        }
 
-        /* --- JURUSAN (GRID) --- */
+        /* Jurusan */
+        .section-title {
+            text-align: center;
+            color: #1e3a8a;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+        }
         .jurusan-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
+            margin-bottom: 4rem;
         }
-
         .jurusan-card {
-            background-color: #fff;
+            background: #fff;
+            padding: 2rem;
             border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            text-align: center;
+            border-top: 5px solid #1e3a8a;
             transition: transform 0.3s;
-            display: flex;
-            flex-direction: column;
         }
-
         .jurusan-card:hover {
             transform: translateY(-5px);
         }
-
-        .jurusan-header {
-            background-color: #3b82f6;
-            color: white;
-            padding: 1.5rem;
-            text-align: center;
-            font-size: 1.25rem;
-            font-weight: bold;
+        .jurusan-card h4 {
+            color: #1e3a8a;
+            margin-bottom: 1rem;
         }
 
-        /* Warna pembeda tiap jurusan */
-        .tkj { background-color: #2563eb; }
-        .listrik { background-color: #dc2626; }
-        .akuntansi { background-color: #16a34a; }
-        .tkp { background-color: #9333ea; }
-
-        .jurusan-body {
-            padding: 1.5rem;
-            flex-grow: 1;
-        }
-
-        .jurusan-body ul {
-            margin-top: 1rem;
-            padding-left: 1.2rem;
-        }
-
-        /* --- KONTAK --- */
-        .contact-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-        }
-
-        .contact-info, .contact-form {
-            background-color: #fff;
+        /* Kontak & Alamat */
+        .kontak-section {
+            background: #fff;
             padding: 2rem;
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.05);
         }
-
-        .contact-info p {
+        .kontak-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+        .info-group {
             margin-bottom: 1rem;
         }
-
-        .form-group {
-            margin-bottom: 1.2rem;
-        }
-
-        .form-group label {
+        .info-group strong {
             display: block;
-            margin-bottom: 0.5rem;
-            font-weight: bold;
+            color: #1e3a8a;
         }
 
-        .form-group input, .form-group textarea {
-            width: 100%;
-            padding: 0.75rem;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-
-        /* --- FOOTER --- */
+        /* Footer */
         footer {
-            background-color: #111827;
-            color: #fff;
+            background-color: #0f172a;
+            color: #94a3b8;
             text-align: center;
             padding: 2rem;
-            margin-top: 3rem;
+            margin-top: 4rem;
+            font-size: 0.9rem;
         }
 
-        /* --- RESPONSIVE --- */
+        /* Responsive Breakpoints */
         @media (max-width: 768px) {
-            .navbar {
-                flex-direction: column;
-                gap: 1rem;
-            }
-            .about-container, .contact-container {
-                grid-template-columns: 1fr;
-            }
-            #hero h2 {
-                font-size: 1.8rem;
-            }
+            .nav-links { display: none; } /* Simpel untuk draf */
+            .kepsek-section { flex-direction: column; text-align: center; }
+            .kepsek-img { margin-right: 0; margin-bottom: 1rem; }
+            .visimisi-grid, .kontak-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
+    <!-- Header / Navigasi -->
     <header>
-        <nav class="navbar">
+        <nav>
             <div class="logo">
                 <h1>SMKN 4 BUTUR</h1>
             </div>
             <ul class="nav-links">
-                <li><a href="#hero">Beranda</a></li>
+                <li><a href="#beranda">Beranda</a></li>
                 <li><a href="#profil">Profil</a></li>
                 <li><a href="#jurusan">Jurusan</a></li>
                 <li><a href="#kontak">Kontak</a></li>
@@ -267,71 +230,111 @@
         </nav>
     </header>
 
-    <section id="hero">
+    <!-- Hero Selamat Datang -->
+    <section class="hero" id="beranda">
         <h2>Selamat Datang di SMKN 4 Buton Utara</h2>
-        <p>Mewujudkan generasi muda yang berkarakter, kompeten, siap kerja, dan berdaya saing tinggi di era global.</p>
-        <a href="#jurusan" class="btn">Lihat Kompetensi Keahlian</a>
+        <p>Membentuk Generasi Berkarakter, Kompeten, Unggul, dan Siap Kerja di Era Digital.</p>
     </section>
 
-    <section id="profil">
-        <h2 class="section-title">Profil Sekolah</h2>
-        <div class="about-container">
-            <div class="about-text">
-                <h3>Tentang Kami</h3>
-                <p>SMK Negeri 4 Buton Utara (Butur) merupakan salah satu lembaga pendidikan kejuruan yang berkomitmen melahirkan lulusan siap kerja yang beriman, bertakwa, serta menguasai ilmu pengetahuan dan teknologi.</p>
-                <br>
-                <p>Dengan fasilitas yang memadai dan tenaga pengajar profesional, kami terus berinovasi untuk memberikan kurikulum terbaik berbasis kebutuhan industri masa kini.</p>
+    <div class="container">
+        
+        <!-- Sambutan Kepala Sekolah -->
+        <section class="kepsek-section" id="profil">
+            <div class="kepsek-img">
+                <!-- Anda bisa mengganti teks ini dengan tag <img src="foto-kepsek.jpg"> jika ada -->
+                FOTO
             </div>
-            <div class="vision-mission">
-                <h3>Visi & Misi</h3>
-                <br>
-                <p><strong>Visi:</strong><br> Menjadi SMK unggulan yang menghasilkan lulusan profesional, berwirausaha, dan berakhlak mulia.</p>
-                <br>
-                <p><strong>Misi:</strong></p>
-                <ul>
-                    <li>Menyelenggarakan pembelajaran berbasis kompetensi dan link and match dengan IDUKA.</li>
-                    <li>Menanamkan nilai karakter kedisiplinan dan keagamaan.</li>
-                    <li>Mengembangkan sarana prasarana praktek yang modern.</li>
-                </ul>
+            <div class="kepsek-text">
+                <h3>Adilun, S.Pd., M.A.P.</h3>
+                <p class="jabatan">Kepala Sekolah SMKN 4 Buton Utara</p>
+                <p>"Selamat datang di website resmi SMKN 4 Buton Utara. Kami berkomitmen untuk terus meningkatkan mutu pendidikan, sarana prasarana, serta kualitas lulusan agar mampu bersaing secara global di dunia usaha dan dunia industri (DUDI)."</p>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="jurusan">
-        <h2 class="section-title">Kompetensi Keahlian (Jurusan)</h2>
-        <div class="jurusan-grid">
-            
-            <div class="jurusan-card">
-                <div class="jurusan-header tkj">TKJ</div>
-                <div class="jurusan-body">
-                    <h3>Teknik Komputer & Jaringan</h3>
-                    <p>Mempelajari cara merakit komputer, instalasi sistem operasi, jaringan komputer (LAN/WAN), keamanan siber, serta administrasi server.</p>
-                    <ul>
-                        <li><strong>Prospek Kerja:</strong> Network Engineer, IT Support, System Administrator, Teknisi Komputer.</li>
-                    </ul>
+        <!-- Visi & Misi -->
+        <section class="visimisi-grid">
+            <div class="box">
+                <h3>Visi</h3>
+                <p>Menjadi lembaga pendidikan kejuruan yang unggul, menghasilkan lulusan yang beriman, bertakwa, berakhlak mulia, profesional, dan mampu bersaing di tingkat nasional maupun global.</p>
+            </div>
+            <div class="box">
+                <h3>Misi</h3>
+                <ol>
+                    <li>Menanamkan keimanan, ketakwaan, dan nilai-nilai karakter bangsa pada seluruh warga sekolah.</li>
+                    <li>Menyelenggarakan pembelajaran berbasis kompetensi sesuai tuntutan dunia kerja terkini.</li>
+                    <li>Meningkatkan kompetensi tenaga pendidik dan kependidikan secara berkelanjutan.</li>
+                    <li>Menjalin kerja sama yang erat dengan Dunia Usaha, Dunia Industri, dan Dunia Kerja (DUDIKA).</li>
+                    <li>Menyediakan sarana dan prasarana praktik yang modern dan representatif.</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Jurusan / Program Keahlian -->
+        <section id="jurusan">
+            <h2 class="section-title">Program Keahlian (Jurusan)</h2>
+            <div class="jurusan-grid">
+                
+                <div class="jurusan-card">
+                    <h4>TKJ</h4>
+                    <p><strong>Teknik Komputer & Jaringan</strong></p>
+                    <p style="font-size: 0.9rem; color: #64748b; margin-top: 0.5rem;">Fokus pada penguasaan jaringan komputer, perakitan hardware, administrasi server, dan troubleshooting sistem operasi.</p>
+                </div>
+
+                <div class="jurusan-card">
+                    <h4>Listrik</h4>
+                    <p><strong>Teknik Instalasi Tenaga Listrik</strong></p>
+                    <p style="font-size: 0.9rem; color: #64748b; margin-top: 0.5rem;">Mempelajari perencanaan, pemasangan, dan pemeliharaan instalasi listrik penerangan serta tenaga industri.</p>
+                </div>
+
+                <div class="jurusan-card">
+                    <h4>Akuntansi</h4>
+                    <p><strong>Akuntansi & Keuangan Lembaga</strong></p>
+                    <p style="font-size: 0.9rem; color: #64748b; margin-top: 0.5rem;">Membekali siswa kemampuan pembukuan keuangan, perpajakan, akuntansi komputer (MYOB), dan pengelolaan transaksi keuangan.</p>
+                </div>
+
+                <div class="jurusan-card">
+                    <h4>TKP</h4>
+                    <p><strong>Teknik Konstruksi & Perumahan</strong></p>
+                    <p style="font-size: 0.9rem; color: #64748b; margin-top: 0.5rem;">Mempelajari gambar bangunan, pelaksanaan konstruksi gedung, manajemen proyek konstruksi, dan estimasi biaya bangunan.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Kontak & Alamat -->
+        <section class="kontak-section" id="kontak">
+            <h2 class="section-title" style="margin-bottom: 1rem;">Hubungi Kami</h2>
+            <div class="kontak-grid">
+                <div>
+                    <div class="info-group">
+                        <strong>Alamat Sekolah:</strong>
+                        <p>Jl. Pendidikan No. 4, Kabupaten Buton Utara, Sulawesi Tenggara, Indonesia.</p>
+                    </div>
+                    <div class="info-group">
+                        <strong>Jam Operasional:</strong>
+                        <p>Senin - Jumat: 07.15 - 14.30 WITA</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="info-group">
+                        <strong>Email Resmi:</strong>
+                        <p>info@smkn4butur.sch.id</p>
+                    </div>
+                    <div class="info-group">
+                        <strong>Telepon / Kontak:</strong>
+                        <p>+62 812-XXXX-XXXX (Tata Usaha)</p>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <div class="jurusan-card">
-                <div class="jurusan-header listrik">LISTRIK</div>
-                <div class="jurusan-body">
-                    <h3>Teknik Instalasi Tenaga Listrik</h3>
-                    <p>Fokus pada pemasangan, pemeliharaan, dan perbaikan instalasi listrik penerangan, daya listrik penerangan jalan, hingga sistem kontrol motor industri.</p>
-                    <ul>
-                        <li><strong>Prospek Kerja:</strong> Teknisi Listrik Pabrik, Kontraktor Listrik, Maintenance Staff di BUMN/Swasta.</li>
-                    </ul>
-                </div>
-            </div>
+    </div>
 
-            <div class="jurusan-card">
-                <div class="jurusan-header akuntansi">AKUNTANSI</div>
-                <div class="jurusan-body">
-                    <h3>Akuntansi & Keuangan Lembaga</h3>
-                    <p>Mempelajari pengelolaan laporan keuangan manual maupun berbasis komputer (MYOB/Spreadsheet), perpajakan, perbankan dasar, dan tata kelola keuangan.</p>
-                    <ul>
-                        <li><strong>Prospek Kerja:</strong> Staff Akuntansi, Kasir, Teller Bank, Staff Administrasi Keuangan.</li>
-                    </ul>
-                </div>
-            </div>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 SMKN 4 Buton Utara. All Rights Reserved.</p>
+        <p style="font-size: 0.8rem; margin-top: 0.5rem;">Didesain oleh Tim IT SMKN 4 Butur</p>
+    </footer>
 
-            
+</body>
+</html>
